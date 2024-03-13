@@ -24,11 +24,10 @@ Proyek kali ini menggunakan board Blackpill versi 3 yang sudah dilengkapi tombol
 
 Setelah itu Anda dapat menggunakan beberapa perintah GDB untuk melihat jalannya program. Misalnya step, info register (asembli), print variabel, mundu, dll. `s`/`si`/`n`/`ni`
 
---------------------------------------------------------------------------------
+Screen copy
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*_* window st-util
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// window st-util /////////////////////////
+
 
 2024-03-13T14:42:21 INFO common.c: F4xx (Dynamic Efficency): 96 KiB SRAM, 384 KiB flash in at least 16 KiB pages.
 2024-03-13T14:42:21 INFO gdb-server.c: flash_erase: block 08000000 -> 4000
@@ -42,9 +41,9 @@ EraseFlash - Sector:0x0 Size:0x4000 2024-03-13T14:42:21 INFO common.c: Starting 
 2024-03-13T14:58:26 ERROR gdb-server.c: cannot recv: -2
 2024-03-13T14:58:26 INFO gdb-server.c: Listening at :4242....
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-*_* window GDB
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// window GDB /////////////////////////
+
 (gdb) load
 Loading section .vector_table, size 0xc4 lma 0x8000000
 Loading section .text, size 0xe8 lma 0x80000c4
@@ -61,7 +60,7 @@ main () at src/main.c:15
 (gdb) s
 26	  GPIOA_MODER |= 0b00;
 (gdb) 
-... ...
+. . .
 (gdb) s
 30	  GPIOC_OTYPER |= 1U << 13;
 (gdb) s
