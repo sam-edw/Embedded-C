@@ -29,32 +29,34 @@ Screen copy
 // window st-util /////////////////////////
 
 
-2024-03-13T14:42:21 INFO common.c: F4xx (Dynamic Efficency): 96 KiB SRAM, 384 KiB flash in at least 16 KiB pages.
-2024-03-13T14:42:21 INFO gdb-server.c: flash_erase: block 08000000 -> 4000
-2024-03-13T14:42:21 INFO gdb-server.c: flash_erase: page 08000000
-EraseFlash - Sector:0x0 Size:0x4000 2024-03-13T14:42:21 INFO common.c: Starting Flash write for F2/F4/F7/L4
-2024-03-13T14:42:21 INFO flash_loader.c: Successfully loaded flash loader in sram
-2024-03-13T14:42:21 INFO flash_loader.c: Clear DFSR
-2024-03-13T14:42:21 INFO common.c: enabling 32-bit flash writes
-2024-03-13T14:42:21 INFO gdb-server.c: flash_do: block 08000000 -> 4000
-2024-03-13T14:42:21 INFO gdb-server.c: flash_do: page 08000000
-2024-03-13T14:58:26 ERROR gdb-server.c: cannot recv: -2
-2024-03-13T14:58:26 INFO gdb-server.c: Listening at :4242....
+2024-03-13T14:42:21 INFO common.c: F4xx (Dynamic Efficency): 96 KiB SRAM, 384 KiB flash in at least 16 KiB pages.   
 
+2024-03-13T14:42:21 INFO gdb-server.c: flash_erase: block 08000000 -> 4000   
 
+2024-03-13T14:42:21 INFO gdb-server.c: flash_erase: page 08000000   
+EraseFlash - Sector:0x0 Size:0x4000 2024-03-13T14:42:21 INFO common.c: Starting Flash write for F2/F4/F7/L4    
+2024-03-13T14:42:21 INFO flash_loader.c: Successfully loaded flash loader in sram    
+2024-03-13T14:42:21 INFO flash_loader.c: Clear DFSR    
+2024-03-13T14:42:21 INFO common.c: enabling 32-bit flash writes    
+2024-03-13T14:42:21 INFO gdb-server.c: flash_do: block 08000000 -> 4000    
+2024-03-13T14:42:21 INFO gdb-server.c: flash_do: page 08000000    
+2024-03-13T14:58:26 ERROR gdb-server.c: cannot recv: -2    
+2024-03-13T14:58:26 INFO gdb-server.c: Listening at :4242....    
+    
+    
 // window GDB /////////////////////////
 
 (gdb) load
-Loading section .vector_table, size 0xc4 lma 0x8000000
-Loading section .text, size 0xe8 lma 0x80000c4
-Start address 0x080000c4, load size 428
-Transfer rate: 601 bytes/sec, 214 bytes/write.
-(gdb) s
+Loading section .vector_table, size 0xc4 lma 0x8000000    
+Loading section .text, size 0xe8 lma 0x80000c4    
+Start address 0x080000c4, load size 428    
+Transfer rate: 601 bytes/sec, 214 bytes/write.    
+(gdb) s    
 Single stepping until exit from function reset_handler,
 which has no line number information.
-Note: automatically using hardware breakpoints for read-only addresses.
-main () at src/main.c:15
-15	int main(void) {
+Note: automatically using hardware breakpoints for read-only addresses.    
+main () at src/main.c:15    
+15	int main(void) {    
 (gdb) s
 17	  RCC_AHB1ENR |= (RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN) ;
 (gdb) s
