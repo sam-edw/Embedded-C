@@ -44,87 +44,87 @@ EraseFlash - Sector:0x0 Size:0x4000 2024-03-13T14:42:21 INFO common.c: Starting 
     
 // window GDB /////////////////////////
 
-(gdb) load
+*(gdb) load*    
 Loading section .vector_table, size 0xc4 lma 0x8000000    
 Loading section .text, size 0xe8 lma 0x80000c4    
 Start address 0x080000c4, load size 428    
 Transfer rate: 601 bytes/sec, 214 bytes/write.    
-(gdb) s    
+*(gdb) s*    
 Single stepping until exit from function reset_handler,
 which has no line number information.    
 Note: automatically using hardware breakpoints for read-only addresses.    
 main () at src/main.c:15    
 15	int main(void) {    
-(gdb) s    
+*(gdb) s*    
 17	  RCC_AHB1ENR |= (RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN) ;    
-(gdb) s    
+*(gdb) s*    
 26	  GPIOA_MODER |= 0b00;    
-(gdb)     
+     
 . . .    
-(gdb) s    
+*(gdb) s*    
 30	  GPIOC_OTYPER |= 1U << 13;    
-(gdb) s    
+*(gdb) s*    
 41	  GPIOA_PUPDR |= PUPDR_PULL_UP << KEY_btn_bit;    
-(gdb) s    
+*(gdb) s*    
 44	  bool pressed = false;    
-(gdb) s    
+*(gdb) s*    
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) p pressed    
+*(gdb) __p pressed__*    
 $1 = false    
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){              
-(gdb) p keyEvt    
+*(gdb) p keyEvt*    
 $2 = 0    
-(gdb) s    
+*(gdb) s*     
 57	      pressed = false;                
-(gdb) s    
+*(gdb) s*     
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){                             
-(gdb) p keyEvt    
+*(gdb) p keyEvt*    
 $3 = 1    
-(gdb) s    
+*(gdb) s*     
 51	      if (!pressed)    
-(gdb) p pressed    
+*(gdb) p pressed*    
 $4 = false    
-(gdb) s    
+*(gdb) s*    
 52	        GPIOC_ODR ^= (1 << LED_bit);      
-(gdb) s    
+*(gdb) s*     
 54	      pressed = true;                           
-(gdb) s    
+*(gdb) s*    
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){                             
-(gdb) p keyEvt    
+*(gdb) p keyEvt*    
 $5 = 1    
-(gdb) s    
+*(gdb) s*     
 51	      if (!pressed)    
-(gdb) s    
+*(gdb) s*     
 54	      pressed = true;                           
-(gdb) s    
+*(gdb) s*     
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){                              
-(gdb) s    
+*(gdb) s*     
 57	      pressed = false;                  
-(gdb) s    
+*(gdb) s*    
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);   
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){                              
-(gdb) s    
+*(gdb) s*    
 51	      if (!pressed)    
-(gdb) s    
+*(gdb) s*     
 52	        GPIOC_ODR ^= (1 << LED_bit);     
-(gdb) s    
+*(gdb) s*     
 54	      pressed = true;                          
-(gdb) s    
+*(gdb) s*     
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) s    
+*(gdb) s*    
 50	    if(keyEvt ){                             
-(gdb) s    
+*(gdb) s*     
 57	      pressed = false;                   
-(gdb) s    
+*(gdb) s*     
 48	    keyEvt = ~GPIOA_IDR & (1 << KEY_btn_bit);     
-(gdb) q    
+_**(gdb) q**_    
     
 Quit anyway? (y or n) y    
